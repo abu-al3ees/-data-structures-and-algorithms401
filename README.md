@@ -10,4 +10,4 @@ return the local array
 time:O(n)
 
 
-![white bored](whitebord.jpg)
+![white bored](asset/whitebord.jpg)
