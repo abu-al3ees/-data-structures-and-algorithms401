@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node array-reverse.js",
+    "start": "node array-shift.js",
     "test": "jest --coverage --verbose"
   },
   "repository": {
