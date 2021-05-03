@@ -11,5 +11,5 @@ push value at new array
 time:O(n)
 
 
-![white bored](./asset/arrayshift1.jpeg)
-![white bored](./asset/arrayshift.jpeg)
+![white bored](../asset/arrayshift1.jpeg)
+![white bored](../asset/arrayshift.jpeg)
