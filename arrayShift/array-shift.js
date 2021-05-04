@@ -1,9 +1,7 @@
 'use strict';
 module.exports =function insertShiftArray(arr, value){
     let resultArr = [];
-    if (typeof value == 'undefined') {
-        return arr;
-    } else if (arr.length == 0) {
+   if (arr.length == 0) {
         resultArr.push(value);
     } else {
         for (let index = 0; index < arr.length; index++) {
