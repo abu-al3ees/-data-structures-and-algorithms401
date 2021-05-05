@@ -8,10 +8,11 @@ itreate in to divided array
 push value at new array 
 
 ## BigO
-time:O(n)
+time:O(1)
+space:O(1)
 
 
-![white bored](../asset/arrayshift1.jpeg)
+![white bored](../asset/arrayShift.png)
 
-![white bored](../asset/arrayshift.jpeg)
+
 
