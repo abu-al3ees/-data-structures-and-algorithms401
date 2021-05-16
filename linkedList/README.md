@@ -10,5 +10,9 @@ Define a method called toString (or __str__ in Python) which takes in no argumen
 - include
 - toString
 - append
+- insert befor
+- insert after
+
 ## BigO
 - complexity for insertion in that case is O(n)
+![white bored](../asset/link.png)

@@ -32,5 +32,25 @@ describe('test Singly Linked Lists',()=>{
     expect(linkedList.toString()).toEqual('{3} -> {2} -> {1} -> {null}');
     expect(newLinkedList.toString()).toEqual('{null}');
   });
+  it('Can successfully insert a node before the first node of a linked list', ()=> {
+    linkedList.insertBefore(3,4);
+    //console.log('ssssssssss-------->'+linkedList)
+    expect(linkedList.head.value).toEqual(4);
+    expect(linkedList.toString()).toEqual('{4} -> {3} -> {2} -> {1} -> {null}');
+  
+  });
 
+  it('Can successfully insert after a node in the middle of the linked list', ()=> {
+    linkedList.insertAfter(3, 7);
+    console.log('dddddd-------->'+ linkedList)
+    expect(linkedList.toString()).toEqual('{4} -> {3} -> {7} -> {2} -> {1} -> {null}');
+
+  });
+  it('Can successfully insert a node after the last node of the linked list', ()=> {
+    linkedList.insertAfter(1, 0);
+    expect(linkedList.toString()).toEqual('{4} -> {3} -> {7} -> {2} -> {1} -> {0} -> {null}');
+
+  });
 });
+
+
