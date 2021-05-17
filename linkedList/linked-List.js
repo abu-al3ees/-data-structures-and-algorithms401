@@ -89,7 +89,25 @@ class linkedList{
     }
     return ;
   }
-
+  kthFromEnd(k) {
+    let pointer1 = this.head;
+    let pointer2 = this.head;
+    let i=0;
+  while( i < k-1){
+    if (pointer2 === null) {
+      return 'Exception';
+    }
+    pointer2 = pointer2.next;
+    i++;
+  }
+    while (pointer2.next !== null) {
+      pointer1 = pointer1.next;
+      pointer2 = pointer2.next;
+    }
+   
+    return pointer1.value;
+   
+  }
 }
 
 

@@ -51,6 +51,13 @@ describe('test Singly Linked Lists',()=>{
     expect(linkedList.toString()).toEqual('{4} -> {3} -> {7} -> {2} -> {1} -> {0} -> {null}');
 
   });
+  it('should find kth value in a linked list', () => {
+    expect(linkedList.kthFromEnd(1)).toEqual(0);
+    expect(linkedList.kthFromEnd(2)).toEqual(1);
+    expect(linkedList.kthFromEnd(4)).toEqual(7);
+    expect(linkedList.kthFromEnd(8)).toEqual('Exception');
+    expect(linkedList.kthFromEnd(10)).toEqual('Exception');
+  });
 });
 
 
