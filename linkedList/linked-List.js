@@ -17,6 +17,7 @@ class linkedList{
             return;
           }
           current = current.next;
+         
         }
       }
       insert(value){
@@ -108,6 +109,7 @@ class linkedList{
     return pointer1.value;
    
   }
+  
 }
 
 
