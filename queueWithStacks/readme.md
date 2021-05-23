@@ -20,4 +20,4 @@ time=O(n)
 space=O(1)
 
 
-![white bored](asset/sedo.png)
+![white bored](../asset/sedo.png)
