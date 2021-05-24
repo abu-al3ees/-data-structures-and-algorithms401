@@ -22,7 +22,7 @@ class Stack {
         let nextTop = new Node(value);
         nextTop.pointer(this.top);
         this.top = nextTop;
-        console.log('push----->'+this.top.value)
+        
     }
 
     pop() {
@@ -60,7 +60,7 @@ class PseudoQueue {
             this.inStack.push(this.inStack.pop());
           }
         }
-        console.log('fdfdfdfdf------->'+this.inStack.pop().value)
+       // console.log('fdfdfdfdf------->'+this.inStack.pop().value)
         return this.inStack.pop().value;
       }
     }

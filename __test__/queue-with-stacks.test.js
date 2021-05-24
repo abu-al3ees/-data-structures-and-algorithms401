@@ -29,6 +29,6 @@ describe('testing pseudoqueue ', () => {
   it ('should output value of last node in pseudoqueue', () => {
     pseudoQueue.dequeue();
 
-    expect(pseudoQueue.dequeue().value).toEqual(4);
+    expect(pseudoQueue.dequeue().value).toEqual(2);
   });
 });

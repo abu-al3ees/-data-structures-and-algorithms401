@@ -10,14 +10,14 @@ list1.head = new Node(1);
 list1.head.next = new Node(2);
 list1.head.next.next = new Node(3);
 
-console.log('list1------>'+list1)
+//console.log('list1------>'+list1)
 const list2=new LinkedList();
 
 list2.head = new Node(4);
 list2.head.next = new Node(5);
 list2.head.next.next = new Node(6);
 
-console.log('list2------>'+list2)
+//console.log('list2------>'+list2)
 
 let combain=llZip(list1,list2);
 const list3=new LinkedList();
