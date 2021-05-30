@@ -10,3 +10,27 @@
 - big o:
 - time and space O(n)
 - exepet adding time O(n) space O(1)
+
+
+
+
+-----------------------------------------------------------
+# code challenge 16
+
+## Challenge
+- Write a function called find-maximum-value which takes binary tree as its only input.
+- Return the maximum value stored in the tree (without utilizing any of the built-in methods available to your language).
+- You can assume that the values stored in the Binary Tree will be numeric.
+## Approach & Efficiency
+
+- reassign the max
+- return the max
+
+bigO
+time = O(n)
+space =O(h)
+
+
+![white bored](../asset/find.png)
+
+

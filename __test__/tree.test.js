@@ -1,5 +1,6 @@
 'use strict';
 
+const { node } = require('../tree/tree');
 const trees = require('../tree/tree');
 
 describe('testing functionality of binary trees and binary search trees', () => {
@@ -21,7 +22,7 @@ describe('testing functionality of binary trees and binary search trees', () => 
     test.root = new trees.node(5);
     test.add(2);
     test.add(9);
-console.log('----------------------------------->>'+test.root.right.value)
+//console.log('----------------------------------->>'+test.root.right.value)
     expect(test.root.left.value).toEqual(2);
     expect(test.root.right.value).toEqual(9);
   });
@@ -55,5 +56,16 @@ console.log('----------------------------------->>'+test.root.right.value)
 
     expect(testArray).toEqual([2,3,1]);
   });
+  it(' Is able to find the maximum value in the tree.', () => {
+  
+    const test = new trees.BinarySearchTree();
+    test.root = new trees.node(1);
+    test.root.left = new trees.node(2);
+    test.root.right = new trees.node(3);
+    test.root.right = new trees.node(4);
+    const testArray = test.findMax();
 
+
+    expect(testArray).toEqual(4);
+});
 });
