@@ -93,6 +93,7 @@ class BinarySearchTree {
         return 'no nodes in tree';
       }
       let current = this.root;
+      console.log('current-----++-1------->'+current)
       let found = false;
       while(current && !found){
         if(value < current.value){
@@ -104,6 +105,14 @@ class BinarySearchTree {
         }
       }
       return false;
+    }
+    findMax(){
+let current=this.root;
+
+while(current.right!==null){
+  current=current.right;
+}
+return current.value;
     }
 }
 module.exports = {
