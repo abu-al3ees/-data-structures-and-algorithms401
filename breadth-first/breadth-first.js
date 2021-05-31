@@ -1,5 +1,47 @@
 'use strict';
+const nodeyy=require('../linkedList/node');
 
+class Queue {
+  constructor() {
+      this.front = null;
+      this.tail=null;
+  }
+  enqueue(value) {
+    let node = new nodeyy(value);
+    if (this.isEmpty()) {
+        this.front = node;
+        this.tail = this.front.next;
+    } else {
+        if (this.tail) {
+         this.tail.next = node;
+           this.tail = node;
+        } else {
+            this.tail = node;
+            this.front.next = this.tail;
+        }
+
+    }
+    return this;
+}
+  dequeue() {
+      if (this.isEmpty()) {
+          return 'Exception';
+      } else {
+          this.front = this.front.next;
+      }
+  }
+
+peek(){
+    if(!this.front){
+      return null;
+    }
+    return this.front.value;
+  }
+  
+  isEmpty() {
+      return this.front === null;
+  }
+}
 class Node {
     constructor(value, left= null, right = null) {
         this.value = value;
@@ -14,9 +56,7 @@ class BinaryTree {
     constructor(root = null) {
         this.root = root;
     }
-    // Pre-Order: Root - Left - Right
-    // Time : O(n) -> n is the number of nodes
-    // Space: O(h) -> h is the height of the tree
+    
     preOrder() {
         let results = [];
         let traverse = (node) => {
@@ -27,9 +67,7 @@ class BinaryTree {
         traverse(this.root);
         return results;
     }
-    // In-Order: Left - Root - Right
-    // Time : O(n) -> n is the number of nodes
-    // Space: O(h) -> h is the height of the tree
+  
     inOrder() {
         let results = [];
         let traverse = (node) => {
@@ -40,9 +78,7 @@ class BinaryTree {
         traverse(this.root);
         return results;
     }
-    // Post-Order:  Left - Right - Root
-    // Time : O(n) -> n is the number of nodes
-    // Space: O(h) -> h is the height of the tree
+   
     postOrder() {
         let results = [];
         let traverse = (node) => {
@@ -53,7 +89,27 @@ class BinaryTree {
         traverse(this.root);
         return results;
     }
+
+    breadthFirst(){
+      let arrayBT = [];
+      let q = new Queue;
+      q.enqueue(this.root);
+      
+      while (q.front) {
+         
+        arrayBT.push(q.front.value.value);
+        if (q.front.value.left) {
+          q.enqueue(q.front.value.left);
+        }
+        if (q.front.value.right) {
+          q.enqueue(q.front.value.right);
+        }
+        q.dequeue();
+      }
     
+      return arrayBT;
+    
+    };
    
 }
 class BinarySearchTree {
@@ -116,8 +172,12 @@ while(current.right!==null){
 return current.value;
     }
 }
+
+
+
 module.exports = {
     node: Node,
     BinaryTree: BinaryTree,
     BinarySearchTree: BinarySearchTree,
+    Queue:Queue
   };
