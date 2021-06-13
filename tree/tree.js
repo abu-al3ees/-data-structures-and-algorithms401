@@ -115,7 +115,22 @@ while(current.right!==null){
 }
 return current.value;
     }
+    sumOdd(){
+      let sum =0;
+      let current=this.root;
+      while(current.right !==null){
+        if(!current.right.value%2==0){
+          sum+=current.right.value
+           
+        }
+        current=current.right
+      }
+      return sum;
+    }
 }
+
+
+
 module.exports = {
     node: Node,
     BinaryTree: BinaryTree,
