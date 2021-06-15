@@ -44,7 +44,7 @@ function QuickSort(arr, left = 0, right = arr.length - 1) {
 
 ### trace
 
-![trace](../asset/quickTrace.png)
+![trace](../asset/quickTrace.jpg)
 
 
 --------------------
