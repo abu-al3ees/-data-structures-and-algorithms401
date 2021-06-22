@@ -1,17 +1,22 @@
 'use strict';
 
-module.exports= function repeatedWord(str){
-  let localArr = str.split(/[\s,]+/);
-  console.log(localArr)
-  let words = [];
-  for(let i = 0; i < localArr.length;i++){
-    let word = localArr[i].toLowerCase();
-    const check = words.includes(word);
-    if(check){
-      return word;
-    }else{
-      words.push(word);
+const hash = require('../hashtable/hashtable.js');
+
+
+module.exports =function repeatedWord(string) {
+  
+  const table = new hash.HashTable(256);
+  
+  const words = string.match(/\w+/g);
+ 
+  
+  for(let i = 0; i < words.length; i++){
+    let key = words[i].toLowerCase();
+    
+    if (table.contains(key)){
+      return table.get(key);
     }
+    table.add(key, key);
   }
-  return null;
+  
 }
