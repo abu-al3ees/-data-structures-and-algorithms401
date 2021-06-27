@@ -108,5 +108,22 @@ describe('Testing graph methods', () => {
 
     expect(testValue).not.toBeUndefined();
   });
+  it('Should properly traverse a graph breadth first', () => {
+    let test = new graph.Graph();
+   
+    let exBFSGraph = [
+      [0, 1, 1, 1, 0],
+      [0, 0, 1, 0, 0],
+      [1, 1, 0, 0, 0],
+      [0, 0, 0, 1, 0],
+      [0, 1, 0, 0, 0]
+    ];
+    //console.log(bfs(exBFSGraph, 1));
+    expect(test.bfs(exBFSGraph,1)).toEqual({"0": 2, "1": 0, "2": 1, "3": 3, "4": Infinity})
+  });
+
+
+
+
 });
 
