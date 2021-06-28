@@ -123,7 +123,35 @@ describe('Testing graph methods', () => {
   });
 
 
+  
 
+  it('Should return true that a trip is possible through the graph and return the total price', () => {
+    let test = new graph.Graph();
+    const pandora = new graph.Vertex('Pandora');
+    const arendelle = new graph.Vertex('Arendelle');
+    const metroville = new graph.Vertex('Metroville');
+    const monstroplolis = new graph.Vertex('Monstroplolis');
+    const narnia = new graph.Vertex('Narnia');
+    const naboo = new graph.Vertex('Naboo');
+    test.addVertex(pandora);
+    test.addVertex(arendelle);
+    test.addVertex(metroville);
+    test.addVertex(monstroplolis);
+    test.addVertex(narnia);
+    test.addVertex(naboo);
+    test.addEdge(pandora, arendelle, 150);
+    test.addEdge(metroville, pandora, 82);
+    test.addEdge(arendelle, metroville, 99);
+    test.addEdge(arendelle, monstroplolis, 42);
+    test.addEdge(metroville, monstroplolis, 105);
+    test.addEdge(metroville, narnia, 37);
+    test.addEdge(metroville, naboo, 26);
+    test.addEdge(monstroplolis, naboo, 73);
+    test.addEdge(narnia, naboo, 250);
+
+    expect(graph.businessTrip(test, [metroville, pandora])).toEqual('true, 82');
+    expect(graph.businessTrip(test, [arendelle, monstroplolis, naboo])).toEqual('true, 115');
+  });
 
 });
 
