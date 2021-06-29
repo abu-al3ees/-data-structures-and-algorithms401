@@ -97,11 +97,60 @@ class Graph {
         }
         return nodesLen;
       };
+
+    
+      dfs (graph, ver) {
+        const visitedVertix = new Set();
+      
+        
+        visitedVertix.add(ver); 
+      
+        const traverse = (current, visited) => {
+          
+          visited.add(current);
+          
+          const get_neighbours = graph.getNeighbors(current);
+      
+          for (let i of get_neighbours) {
+            if(!visited.has(i.ver)){
+              traverse(i.vertex, visited);
+            }
+          }
+        };
+      
+        traverse(ver, visitedVertix);
+        return visitedVertix;
+      }
       
 }
+function businessTrip(graph, cityArray) {
+  let totalCost = 0;
+  let check = false;
+
+  for (let i = 0; i < cityArray.length - 1; i++) {
+    let neighbors = graph.getNeighbors(cityArray[i]);
+    for (let j = 0; j <= neighbors.length - 1; j++) {
+      if (cityArray[i + 1] === neighbors[j].vertex) {
+        totalCost += neighbors[j].weight;
+        check = true;
+      }
+    }
+    if (check === false) {
+      totalCost = 0;
+      check = false;
+      return `${check}, $${totalCost}`;
+    }
+  }
+
+  return `${check}, ${totalCost}`;
+}
+
+
 
 module.exports = {
     Vertex,
     Edge,
     Graph,
+    businessTrip,
+
   };
