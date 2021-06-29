@@ -178,8 +178,8 @@ describe('Testing graph methods', () => {
       let testValue = test.dfs(test, one);
       let arrayValues = Array.from(testValue);
      
-      expect(arrayValues[0].value).toEqual('1');
-      expect(arrayValues[4].value).toEqual('5');
+      expect( arrayValues).toEqual([{"value": "1"}, {"value": "2"}, {"value": "3"}, {"value": "4"}, {"value": "5"}]);
+    
     });
 
 });
