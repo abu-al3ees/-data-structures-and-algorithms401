@@ -153,5 +153,34 @@ describe('Testing graph methods', () => {
     expect(graph.businessTrip(test, [arendelle, monstroplolis, naboo])).toEqual('true, 115');
   });
 
+
+
+    it(' traverse graph depth first', () => {
+      let test = new graph.Graph();
+      const one = new graph.Vertex('1');
+      const two = new graph.Vertex('2');
+      const three = new graph.Vertex('3');
+      const four = new graph.Vertex('4');
+      const five = new graph.Vertex('5');
+     
+      test.addVertex(one);
+      test.addVertex(two);
+      test.addVertex(three);
+      test.addVertex(four);
+      test.addVertex(five);
+     
+      test.addEdge(one, two);
+      test.addEdge(one, three);
+      test.addEdge(two, three);
+      test.addEdge(three,four);
+      test.addEdge(four,five);
+     ;
+      let testValue = test.dfs(test, one);
+      let arrayValues = Array.from(testValue);
+     
+      expect(arrayValues[0].value).toEqual('1');
+      expect(arrayValues[4].value).toEqual('5');
+    });
+
 });
 

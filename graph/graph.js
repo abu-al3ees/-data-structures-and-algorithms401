@@ -97,6 +97,30 @@ class Graph {
         }
         return nodesLen;
       };
+
+    
+      dfs (graph, ver) {
+        const visitedVertix = new Set();
+      
+        
+        visitedVertix.add(ver); 
+      
+        const traverse = (current, visited) => {
+          
+          visited.add(current);
+          
+          const get_neighbours = graph.getNeighbors(current);
+      
+          for (let i of get_neighbours) {
+            if(!visited.has(i.ver)){
+              traverse(i.vertex, visited);
+            }
+          }
+        };
+      
+        traverse(ver, visitedVertix);
+        return visitedVertix;
+      }
       
 }
 function businessTrip(graph, cityArray) {
@@ -122,9 +146,11 @@ function businessTrip(graph, cityArray) {
 }
 
 
+
 module.exports = {
     Vertex,
     Edge,
     Graph,
     businessTrip,
+
   };
